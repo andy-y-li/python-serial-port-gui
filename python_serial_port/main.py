@@ -12,6 +12,9 @@ import threading
 # Get path
 import os
 
+from PIL import Image
+from PIL import ImageTk
+
 # Use realpath if you want the real path (symlinks are resolved)
 # file_path = os.path.realpath(__file__)
 FILE_PATH = os.path.abspath(__file__)
@@ -37,7 +40,9 @@ class GUI:
         # Title of application window
         self.window.title(title)
         # Icon of application window
-        self.window.iconphoto(False, tk.PhotoImage(file=ICON_PATH))
+        img = Image.open(ICON_PATH)
+        #self.window.iconphoto(False, tk.PhotoImage(file=ICON_PATH))
+        self.window.iconphoto(False, ImageTk.PhotoImage(img))
 
         self.topFrame = tk.Frame(self.window, bg="#cccccc")
 
