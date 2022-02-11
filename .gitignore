@@ -1,0 +1,5 @@
+*.code-workspace
+python_serial_port/dist
+python_serial_port/__pycache__
+python_serial_port/setup.py
+python_serial_port/build
